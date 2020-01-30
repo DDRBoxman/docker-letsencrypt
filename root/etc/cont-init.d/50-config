@@ -179,7 +179,7 @@ if [ "$VALIDATION" = "dns" ]; then
   elif [[ "$DNSPLUGIN" =~ ^(gandi)$ ]]; then
     PREFCHAL="-a certbot-plugin-${DNSPLUGIN}:dns --certbot-plugin-${DNSPLUGIN}:dns-credentials /config/dns-conf/${DNSPLUGIN}.ini --manual-public-ip-logging-ok"
   elif [[ "$DNSPLUGIN" =~ ^(google)$ ]]; then
-    PREFCHAL="--dns-${DNSPLUGIN} --dns-${DNSPLUGIN}-credentials /config/dns-conf/${DNSPLUGIN}.json --manual-public-ip-logging-ok --dns-${DNSPLUGIN}-propagation-seconds 120"
+    PREFCHAL="--dns-${DNSPLUGIN} --manual-public-ip-logging-ok --dns-${DNSPLUGIN}-propagation-seconds 120"
   elif [[ "$DNSPLUGIN" =~ ^(domeneshop|inwx|transip)$ ]]; then
     PREFCHAL="-a certbot-dns-${DNSPLUGIN}:dns-${DNSPLUGIN} --certbot-dns-${DNSPLUGIN}:dns-${DNSPLUGIN}-credentials /config/dns-conf/${DNSPLUGIN}.ini --manual-public-ip-logging-ok --certbot-dns-${DNSPLUGIN}:dns-${DNSPLUGIN}-propagation-seconds 180"
   else
