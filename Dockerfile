@@ -100,7 +100,6 @@ RUN \
 	certbot-dns-dnsimple \
 	certbot-dns-dnsmadeeasy \
 	certbot-dns-domeneshop \
-	certbot-dns-google \
 	certbot-dns-inwx \
 	certbot-dns-linode \
 	certbot-dns-luadns \
@@ -112,6 +111,7 @@ RUN \
 	certbot-plugin-gandi \
 	cryptography \
 	requests && \
+ pip3 install -e "git+https://github.com/DDRBoxman/certbot/#egg=certbot-dns-google&subdirectory=certbot-dns-google" && \ 	
  echo "**** remove unnecessary fail2ban filters ****" && \
  rm \
 	/etc/fail2ban/jail.d/alpine-ssh.conf && \
